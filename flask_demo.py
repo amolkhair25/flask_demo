@@ -7,8 +7,8 @@ app = Flask(__name__)
 def test():
     return render_template("test.html")
 
-@app.route("/hello")
-def hello():
+@app.route("/hello")#(@app.route decorator is used to define a route for your web application),(/hello ->URL route that will trigger the greet function)
+def hello():# hello function that will be called when a user visits the specified URL route
     return render_template("hello.html")
 
 @app.route("/status")
