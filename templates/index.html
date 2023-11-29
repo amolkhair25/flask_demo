@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    {% block content %}
+    
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center py-4 px-xl-5">
@@ -104,18 +104,18 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="course.html" class="nav-item nav-link">Courses</a>
-                            <a href="teacher.html" class="nav-item nav-link">Teachers</a>
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href="about" class="nav-item nav-link">About</a>
+                            <a href="courses" class="nav-item nav-link">Courses</a>
+                            <a href="teacher" class="nav-item nav-link">Teachers</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
+                                <a href="blog" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="blog.html" class="dropdown-item">Blog List</a>
-                                    <a href="single.html" class="dropdown-item">Blog Detail</a>
+                                    <a href="blog_list" class="dropdown-item">Blog List</a>
+                                    <a href="blog_details" class="dropdown-item">Blog Detail</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact" class="nav-item nav-link">Contact</a>
                         </div>
                         <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Join Now</a>
                     </div>
@@ -125,7 +125,7 @@
     </div>
     <!-- Navbar End -->
 
-
+    {% block content %}
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -170,7 +170,7 @@
     </div>
     <!-- Carousel End -->
 
-
+    
     <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
@@ -609,7 +609,7 @@
     </div>
     <!-- Blog End -->
 
-
+    {% endblock %}
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
         <div class="row pt-5">
@@ -617,9 +617,9 @@
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>Shivaji Nagar, Pune, Maharashtra, India-411005</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+91-997-534-0919</p>
+                        <p><i class="fa fa-envelope mr-2"></i>hr@sagveektechnologies.in</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -696,7 +696,7 @@
 
     <!-- Template Javascript -->
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
-    {% endblock %}
+    
 </body>
 
 </html>
