@@ -15,9 +15,7 @@
       table{
          margin-left: auto;
          margin-right: auto;
-         vertical-align: baseline;
          width: 80%;
-         text-align:center;
 
       }
       table, td {
@@ -61,59 +59,58 @@
             color: white;
             }
 
+            form, label{
+	         border: 1px solid black;
+	         border-radius: 10px;
+	         padding: 15px;
+	         background-color: lightskyblue;
+	         align-content: center;
+	         margin-left: auto;
+	         margin-right: auto;
+	         width: 80%;
+      		}
+      		input{
+	      		border: 1px solid black;
+		        border-radius: 10px;
+		        padding: 15px;
+		        background-color: whitesmoke;
+		        align-content: center;
+		        margin-left: auto;
+		        margin-right: auto;
+		        width: 80%;
+      		}
+      		mark {
+      			background-color: yellow;
+      			color: black;
+      			font-weight: bold;
+      		}
+
    </style>
 
 
-   </head>
-   <body>
-      <div class="topnav">
+	</head>
+	<body>
+		<div class="topnav">
             <a class="active" href="{{ url_for('show_all') }}">Home</a>
             <a href = "{{ url_for('new') }}" style="color:white;">Add Student</a>)
             <a href="{{ url_for('update_student' , student_id=1) }}">Edit</a>
             <a href="{{ url_for('delete_student', student_id=1) }}">Delete</a>
         </div>
-
-      
-
-      <!--<h3>
-         <a href = "{{ url_for('show_all') }}">Flask CRUD</a>
-      </h3>-->
-   
-      {%- for message in get_flashed_messages() %}
-         {{ message }}
-      {%- endfor %}
-		
-      <!--<h3 style="color:red;">Students(
-         <a href = "{{ url_for('new') }}" style="color:red;">Add Student</a>)
-      </h3>-->
-      
-      <table>
-         <thead>
-            <tr>
-               <th>STD_ID</th>
-               <th>Name</th>
-               <th>City</th>
-               <th>Address</th>
-               <th>Pin</th>
-               <th>Edit</th>
-               <th>Delete</th>
-            </tr>
-         </thead>
-
-         <tbody>
-            {% for student in students %}
-               <tr>
-                  <td>{{ student.id }}</td>
-                  <td>{{ student.name }}</td>
-                  <td>{{ student.city }}</td>
-                  <td>{{ student.addr }}</td>
-                  <td>{{ student.pin }}</td>
-                  <td><a href="{{ url_for('update_student', student_id=student.id) }}"><i style="font-size:24px" class="fa">&#xf044;</i></a></td>
-                  <td><a href="{{ url_for('delete_student', student_id=student.id) }}"><i class="fa fa-trash-o" style="font-size:24px"></i></a></td>
-               </tr>
-
-            {% endfor %}
-         </tbody>
-      </table>
-   </body>
-</html>
+ 
+    
+    
+        <div class="main-content">
+            
+            <form method="post" action="{{ url_for('delete_student', student_id=student.id) }}">
+            	<h2>Delete Student</h2>
+            	<p>Are you sure you want to delete student <mark>'{{ student.name }}'</mark>?</p>
+                <button type="submit" style="font-size:24px; background-color:lightskyblue;border-radius:1px solid black;border-radius: 10px;">Delete</button>
+                <a href="{{ url_for('show_all') }}" style="font-size:24px; color: black;border-radius:1px solid black;border-radius: 10px;">Back to Home</a>
+            </form>
+            
+        </div>
+        <div class="sidebar">
+            <!-- Sidebar content (if any) -->
+        </div>
+    </div>
+</body>
